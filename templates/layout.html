@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    <div class="container">
+            <div class="m-3 p-3">
+                    <form>
+                        <div class="form-row">
+                        <div class="form-group col-md-4 col-sm">
+                            <label for="inputNickName">Nick Name:</label>
+                            <input type="text" class="form-control" id="inputNickName" placeholder="Nick*">
+                        </div>
+                        <div class="form-group col-md-4 col-sm">
+                                <label for="inputState">Age:</label>
+                                <select id="inputState" class="form-control" placeholder="Age">
+                                <option selected>----</option>
+                                {%for i in range(16, 71)%}   
+                                <option>{{i}}</option>
+                                {%endfor%}
+                                </select>
+                        </div>
+                        <div class="form-group col-md-4 col-sm">
+                                <label for="inputState">Level:</label>
+                                <select id="inputState" class="form-control" placeholder="Level">
+                                    {%for x in levels_list%}   
+                                        <option>{{x}}</option>
+                                    {%endfor%}
+                                </select>
+                                
+                        </div>
+                        <div class="form-group col-md-4 col-sm">
+                                <label for="inputAge">Skype: </label>
+                                <input type="age" class="form-control" id="inputAge">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputState">Goal:</label>
+                            <select id="inputState" class="form-control">
+                            <option selected>Choose...</option>
+                            <option>...</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                                <label for="inputState">Sex:</label>
+                                <select id="inputState" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>Male</option>
+                                <option>Female</option>
+
+                                </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                                <label for="inputState">Country:</label>
+                                <select id="inputState" class="form-control">
+                                    <option selected>Choose...</option>
+                                    {% for item in countries_list %}   
+                                        <option>{{item.code}}: {{item.name}}</option>
+                                    {%endfor%}
+                                </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" class="form-control" id="inputZip">
+                        </div>
+                        </div>
+                        <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                            Check me out
+                            </label>
+                        </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    </form>
+                </div>
+    </div>
+
+    <div class="container">
+        {% include 'includes/table_template.html' %}
+    </div>
+
+</body>
+</html>

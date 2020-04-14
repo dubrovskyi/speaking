@@ -1,0 +1,6 @@
+.venv/*
+.vscode/*
+__pychage__/*
+*/__pychage__/*
+redis_config.py
+redis_test.py

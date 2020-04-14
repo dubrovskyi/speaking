@@ -49,23 +49,24 @@
 
 
 <table class="table">
-        <thead class="thead-dark">
+        <thead class="table thead-dark table-hover">
           <tr>
             <th scope="col">Nick</th>
-            <th scope="col">Age</th>
-            <th scope="col">Level</th>
-            <th scope="col">Country</th>
-            <th scope="col">Skype</th>
+            <th scope="col" class="text-center">Age</th>
+            <th scope="col" class="text-center">Level</th>
+            <th scope="col" class="text-center">Country</th>
+            <th scope="col" class="text-center">Skype</th>
           </tr>
         </thead>
         <tbody>
             {% for ses in sessions %}
             <tr>
               <td>{{ses['nick']}}</td>
-              <td>{{ses['age']}}</td>
-              <td>{{ses['level']}}</td>
-              <td>{{ses['country']}}</td>
-              <td>{{ses['skype']}}</td>
+              <td class="text-center">{{ses['age']}}</td>
+              <td class="text-center">{{ses['level']}}</td>
+              <td class="text-center">{{ses['country']}}</td>
+              <td class="text-center align-middle" style="text-align: center;"><a href= "skype:{{ses['skype']}}?chat"><img src="../static/dist/img/3232.png">
+            </a></td>
             </tr>
             {% endfor %}
         </tbody>

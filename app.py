@@ -15,7 +15,7 @@ from models.InfoForm import InfoForm
 app = Flask(__name__, instance_relative_config=False)
 app.config['SECRET_KEY'] = 'any secret string'
 #app.config['FLASK_RUN_HOST'] = '0.0.0.0'
-rediis = redis.Redis('localhost')
+rediis = redis.Redis(os.getenv('REDIS_HOST'))
 
 @app.route('/',methods=['GET','POST'])
 def index():

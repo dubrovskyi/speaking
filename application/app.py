@@ -7,9 +7,9 @@ import uuid
 import os
 import redis
 
-from utils.common_helper import CommonHelper
-from utils.redis_helper import RedisHelper
-from models.InfoForm import InfoForm
+from application.utils.common_helper import CommonHelper
+from application.utils.redis_helper import RedisHelper
+from application.models.InfoForm import InfoForm
 
 
 app = Flask(__name__, instance_relative_config=False)
@@ -19,7 +19,6 @@ rediis = redis.Redis(os.getenv('REDIS_HOST'))
 
 @app.route('/',methods=['GET','POST'])
 def index():
-
     form = InfoForm()
     if form.validate_on_submit():
         session['nick'] = form.nick.data

@@ -3,9 +3,9 @@ from wtforms import (StringField,SelectField,
                     SubmitField)
 from wtforms.validators import DataRequired
 
-from utils.country_helper import CountryHelper
-from utils.level_helper import LevelHelper
-from utils.goals_helper import GoalsHelper
+from application.utils.country_helper import CountryHelper
+from application.utils.level_helper import LevelHelper
+from application.utils.goals_helper import GoalsHelper
 
 def tuple_form_dict():
     return [(c['code'],f"{c['code']} - {c['name']}") for c in CountryHelper.get_countries()]

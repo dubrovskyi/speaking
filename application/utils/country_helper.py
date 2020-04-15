@@ -8,7 +8,7 @@ class CountryHelper():
 
     @staticmethod
     def __set_file_name():
-        __class__.__file_name = 'data/countries.txt'
+        __class__.__file_name = 'application/data/countries.txt'
 
     @staticmethod
     def get_file_name():

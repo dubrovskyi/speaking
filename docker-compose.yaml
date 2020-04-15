@@ -2,6 +2,8 @@ version: '3'
 services:
   web:
     build: .
+    volumes:
+      - "./application:/usr/app/speaking/application"
     ports:
       - "5000:5000"
     environment: 
